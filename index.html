@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awesome 2048</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Awesome 2048</h1>
+        <div id="menu">
+            <button id="startGame">Start Game</button>
+            <button id="highScores">High Scores</button>
+            <button id="toggleMusic">Music: Off</button>
+        </div>
+        <div id="game" style="display: none;" tabindex="0">
+            <div class="grid-container">
+                <div class="grid"></div>
+            </div>
+            <div class="controls">
+                <p>Score: <span id="score">0</span></p>
+                <p>Best: <span id="bestScore">0</span></p>
+                <button id="undoButton">Undo</button>
+            </div>
+        </div>
+    </div>
+    <audio id="backgroundMusic" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    </audio>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>

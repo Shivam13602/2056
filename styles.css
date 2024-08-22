@@ -1,0 +1,112 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #faf8ef;
+    background-image: linear-gradient(to bottom right, #faf8ef, #eee4da);
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    color: #776e65;
+}
+
+#menu {
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #8f7a66;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.grid-container {
+    background-color: #bbada0;
+    border-radius: 6px;
+    width: 400px;
+    height: 400px;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 15px;
+    width: 100%;
+    height: 100%;
+}
+
+.grid-cell {
+    background-color: #cdc1b4;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    font-weight: bold;
+    color: #776e65;
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%; /* This makes the height equal to the width */
+    position: relative;
+}
+
+.grid-cell::before {
+    content: '';
+    display: block;
+    padding-top: 100%; /* This maintains the aspect ratio */
+}
+
+.grid-cell span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.grid-cell[data-value="2"] { background-color: #eee4da; }
+.grid-cell[data-value="4"] { background-color: #ede0c8; }
+.grid-cell[data-value="8"] { background-color: #f2b179; color: #f9f6f2; }
+.grid-cell[data-value="16"] { background-color: #f59563; color: #f9f6f2; }
+.grid-cell[data-value="32"] { background-color: #f67c5f; color: #f9f6f2; }
+.grid-cell[data-value="64"] { background-color: #f65e3b; color: #f9f6f2; }
+.grid-cell[data-value="128"] { background-color: #edcf72; color: #f9f6f2; }
+.grid-cell[data-value="256"] { background-color: #edcc61; color: #f9f6f2; }
+.grid-cell[data-value="512"] { background-color: #edc850; color: #f9f6f2; }
+.grid-cell[data-value="1024"] { background-color: #edc53f; color: #f9f6f2; }
+.grid-cell[data-value="2048"] { background-color: #edc22e; color: #f9f6f2; }
+
+.grid-cell.new-tile {
+    animation: newTileAppear 0.3s ease-in-out;
+}
+
+@keyframes newTileAppear {
+    0% { transform: scale(0); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.controls {
+    margin-top: 20px;
+}
+
+.controls p {
+    display: inline-block;
+    margin-right: 20px;
+}
